@@ -1,0 +1,11 @@
+<div style="background-color: white">
+  <h1><%= @book.title %></h1>
+   
+
+  <ul>
+    <% @book.authors.each do |author| %>
+      <li>Name: <%= author.name %> <%= link_to 'Edit', edit_author_path(author) %></li>
+      <li>Name: <%= author.name %> <%= link_to 'Delete', author_path(author) %></li>
+    <% end %>
+  </ul>
+</div>

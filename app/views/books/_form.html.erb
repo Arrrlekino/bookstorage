@@ -1,0 +1,22 @@
+<div class="col-md-8">
+<% if @book.present? %>
+  <% @book.errors.each do |attr, msg| %>
+    <div class="alert alert-danger" role="alert">
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+<%= form_for(:book, url: path, method: "post") do %>
+  <div class="form-group">
+    <%= label(:book, :title, "Title") %>
+    <%= text_field(:book, :title, class: "form-control") %>
+  </div>
+    <div class="form-group">
+    <!-- :topic_id == :topic (+ def post_params => ... [:topic_id] = params...[:topic]) -->
+    <%= label(:book, :topic, "Choose tema") %>
+    <%= select(:book, :topic, options_from_collection_for_select(@topics, "id", "title", @book.present? ? @book.id : nil), {}, {class: "form-control"}) %>
+  </div>
+  
+    <%= submit_tag(action == "edit" ? "Сохранить" : "Создать", class: "btn btn-primary") %>
+<% end %>
+</div>

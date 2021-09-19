@@ -1,0 +1,5 @@
+<li>
+  Name: <%= author.name %>
+  <%= link_to 'Show', author_path(author) %>
+  <%= link_to 'Delete', author_path(author), data: {method: :delete} %>
+</li>

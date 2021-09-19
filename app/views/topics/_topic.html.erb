@@ -1,0 +1,6 @@
+<li>
+  Name: <%= topic.title %>
+  <%= link_to 'Show', topic_path(topic) %>
+  <%= link_to 'Delete', topic_path(topic), data: {method: :delete} %>
+  <%= link_to 'Edit', topic_path(topic), data: {method: :edit} %>
+</li>

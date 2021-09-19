@@ -1,0 +1,12 @@
+<div style="background-color: white">
+  <h1>Edit author</h1>
+
+  <%= form_with model: @author do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <label>BOOks:</label>
+    <%= f.collection_check_boxes :book_ids, Book.all, :id, :title %>
+    <%= f.submit %>
+  <% end %>
+</div>

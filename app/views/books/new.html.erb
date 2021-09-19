@@ -1,0 +1,24 @@
+<h1>NEW Book</h1>
+<%= form_with model: @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :cover %>
+  <%= f.text_field :cover %>
+
+
+<label>Authors:</label>
+    <%= f.collection_check_boxes :author_ids, Author.all, :id, :name %>
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">CHOOSE TEMA!!!</label>
+    <select class="form-control" name="book[topic_id]">
+      <% @topics.each do |topic| %>
+        <option value="<%= topic.id %>"><%= topic.title %></option>
+      <% end %>  
+    </select>
+  </div>
+  
+
+  <%= f.submit %>
+<% end %>

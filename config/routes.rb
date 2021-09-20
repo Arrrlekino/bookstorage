@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :books, only: [:show, :index, :edit, :update, :destroy, :create, :new]
   end
   
-  resources :roles do
-    resources :admins, only: [:show, :index, :edit, :update, :destroy, :create, :new]
-  end
+ # resources :roles do
+ #   resources :admins, only: [:show, :index, :edit, :update, :destroy, :create, :new]
+ # end
 end

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'books/:topic', to: 'books#topic'
 
   resources :topics do
-    resources :books, only: [:show, :index, :edit, :update, :destroy]
+    resources :books, only: [:show, :index, :edit, :update, :destroy, :create, :new]
   end
 end

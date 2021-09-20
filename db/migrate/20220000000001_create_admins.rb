@@ -4,7 +4,7 @@ class CreateAdmins < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :name
       t.string :password_digest
-      t.belongs_to :role, null: false, foreign_key: true
+      t.belongs_to :role, null: false, foreign_key: true, default: Role.first.id
 
       t.timestamps
     end
